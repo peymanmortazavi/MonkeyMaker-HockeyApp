@@ -1,0 +1,31 @@
+{
+  "name": "monkeymaker-hockeyapp",
+  "version": "0.0.1",
+  "description": "HockeyApp artifact processor for MonkeyMaker to upload builds after they're ready.",
+  "main": "hockeyapp.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peymanmortazavi/MonkeyMaker-HockeyApp.git"
+  },
+  "keywords": [
+    "hockeyapp",
+    "monkey",
+    "maker",
+    "integration",
+    "upload",
+    "build"
+  ],
+  "author": "Peyman Mortazavi <pey.mortazavi@gmail.com> (https://www.linkedin.com/pub/peyman-mortazavi/50/b51/73b)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/peymanmortazavi/MonkeyMaker-HockeyApp/issues"
+  },
+  "homepage": "https://github.com/peymanmortazavi/MonkeyMaker-HockeyApp#readme",
+  "dependencies": {
+    "exec": "^0.2.0",
+    "string-format": "^0.5.0"
+  }
+}
