@@ -10,7 +10,7 @@ var hockeyAppConfigTemplate = {
 }
 
 module.exports = function () {
-  
+
 }
 
 module.exports.prototype.supports = function(platform) {
@@ -28,8 +28,8 @@ module.exports.prototype.process = function (args) {
 
   var globalHockeyAppConfig = evalResults.config;
 
-  evalResults = monkey.configUtil.evaluate({appId: 'string'}, args.rawConfig.hockeyApp);
-  if(!evalResults.isValid) return; // Escape it, don't upload.
+  evalResults = monkey.configUtil.evaluate({appId: 'string'}, args.config.hockeyApp);
+  if(!evalResults.isValid) throw { message: "HockeyApp is not setup properly in config settings.", errors: evalResults.errors };
 
   var hockeyAppConfig = evalResults.config;
 
