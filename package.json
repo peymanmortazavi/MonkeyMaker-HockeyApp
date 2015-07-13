@@ -1,6 +1,6 @@
 {
   "name": "monkeymaker-hockeyapp",
-  "version": "0.0.4",
+  "version": "1.0.7",
   "description": "HockeyApp artifact processor for MonkeyMaker to upload builds after they're ready.",
   "main": "hockeyapp.js",
   "scripts": {
@@ -25,7 +25,8 @@
   },
   "homepage": "https://github.com/peymanmortazavi/MonkeyMaker-HockeyApp#readme",
   "dependencies": {
-    "exec": "^0.2.0",
+    "sync-exec": "^0.5.0",
+    "path": "^0.11.14",
     "string-format": "^0.5.0"
   }
 }

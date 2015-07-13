@@ -1,5 +1,6 @@
-var exec = require('exec');
+var exec = require('sync-exec');          // Exec utilities
 var format = require('string-format');
+var path = require('path');
 
 format.extend(String.prototype);
 
@@ -41,10 +42,11 @@ module.exports.prototype.process = function (args) {
   }
   releaseNotesPath = path.join(solutionPath, monkey.options[args.platform.toLowerCase()]['projectName'], globalHockeyAppConfig.releaseNotes.value);
 
-  var execResult = exec('puck -api_token={0} -app_id={1} -submit=auto -download=true -open=notify -notify={4} -notes_path={2} {3}'
-      .format(globalHockeyAppConfig.apiKey.value, hockeyAppConfig.appId.value, releaseNotesPath, args.outputUrl, globalHockeyAppConfig.notify.value));
+  var execResult = exec('puck -api_token={0} -app_id={1} -submit=auto -download=true -open=notify -notify={4} -notes_path={2} {3}'.format(globalHockeyAppConfig.apiKey.value, hockeyAppConfig.appId.value, releaseNotesPath, args.outputUrl, globalHockeyAppConfig.notify.value));
 
   if(execResult.status != 0) {
     throw { message: "Could not upload to HockeyApp.", stdout: execResult.stdout};
   }
+
+  return { success: true };
 }
