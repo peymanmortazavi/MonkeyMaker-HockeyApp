@@ -1,6 +1,6 @@
 {
   "name": "monkeymaker-hockeyapp",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "HockeyApp artifact processor for MonkeyMaker to upload builds after they're ready.",
   "main": "hockeyapp.js",
   "scripts": {
