@@ -28,12 +28,12 @@ module.exports.prototype.process = function (args) {
   var evalResults = configUtil.evaluate(hockeyAppConfigTemplate, monkey.options.hockeyApp);
   if(!evalResults.isValid) throw { message: "HockeyApp is not setup properly in monkey project settings.", errors: evalResults.errors }
 
-  var globalHockeyAppConfig = evalResults.config;
+  var globalHockeyAppConfig = evalResults.compile();
 
-  if(args.config.config.hockeyApp){
-    evalResults = monkey.configUtil.evaluate({appId: 'string'}, args.config.config.hockeyApp);
+  if(args.config.config.hockeyApp) {
+    evalResults = configUtil.evaluate({appId: 'string'}, args.config.config.hockeyApp, 'config.hockeyApp');
   } else{
-    evalResults = monkey.configUtil.evaluate({appId: 'string'}, args.config.hockeyApp);
+    evalResults = configUtil.evaluate({appId: 'string'}, args.config.hockeyApp, 'hockeyApp');
   }
   if(!evalResults.isValid) throw { message: "HockeyApp is not setup properly in config settings.", errors: evalResults.errors };
 
